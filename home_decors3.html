@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <h1>HOME DECOR</h1>
+  </head>
+  <style>
+    h1 {
+      font-family: "Cinzel", cursive;
+      text-align: center;
+      padding-bottom: 4em;
+    }
+    body {
+      background: rgb(158, 240, 50);
+    }
+    img {
+      width: 120px;
+    }
+    img:hover{transform: scale(2);}
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 3em;
+      flex-wrap: wrap;
+      cursor: pointer;
+    }
+    .container1 {
+      display: flex;
+      justify-content: space-between;
+    }
+    input {
+      font-size: 20px;
+    }
+    .g,
+    .h,
+    .i,
+    .j {
+      height: 160px;
+    }
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      text-align: center;
+    }
+    #a {
+      height: 160px;
+    }
+    .container .popup-images img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 5px solid #ffff;
+      border-radius: 5px;
+      height: fit-content;
+      width: 550px;
+      object-fit: cover;
+    }
+    .container-item g {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    .container .popup-images {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .container .popup-images img {
+        width: 95%;
+      }
+    }
+    .container .popup-images span {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 40px;
+      font-weight: bolder;
+      color: rgba(255, 255, 255);
+      cursor: pointer;
+      z-index: 100;
+    }
+    img {
+      width: 7em;
+      transition: 0.2s linear;
+    }
+    .card{background: rgb(158,240,50);border: none;}
+    .btn-primary{height:40px;position: relative;top: -30px;left:80px;width:90px;}
+    #clicking,#clicking1{position: relative;}
+    .quantity{position: relative;top:20px;right:140px;}
+    .plus{font-size: 15px;position: relative;color: white;cursor:pointer;top:-10px;left:-5px;}
+    .minus{font-size:15px;position: relative;color:white;cursor:pointer;top:-10px;left:-5px;}
+    #plus1,#minus1,#plus2,#minus2,#plus3,#minus3,#plus4,#minus4,#plus5,#minus5{height:20px;position: relative;width:30px;}
+    #plus1{position: relative;left:-12px;top:-28px;}
+    #minus1{position: relative;left:10px;top:-28px;}
+    #plus2{position: relative;left:-12px;top:-28px;}
+    #minus2{position: relative;left:10px;top:-28px;}
+    #plus3{position: relative;left:-12px;top:-28px;}
+    #minus3{position: relative;left:10px;top:-28px;}
+    #plus4{position: relative;left:-12px;top:-28px;}
+    #minus4{position: relative;left:10px;top:-28px;}
+    #plus5{position: relative;left:-12px;top:-28px;}
+    #minus5{position: relative;left:10px;top:-28px;}
+    .price_tag1{position: relative;left:-15px;width:90px;}
+    .price_tag2{position: relative;left:-15px;width:90px;}
+    .price_tag3{position: relative;left:-15px;width:90px;}
+    .price_tag4{position: relative;left:-15px;width:90px;}
+    .price_tag5{position: relative;left:-15px;width:90px;}
+    #price1{position: relative;left:35px;top:-40px;width:90px;}
+    #price2{position: relative;left:35px;top:-40px;width:90px;}
+    #price3{position: relative;left:35px;top:-40px;width:90px;}
+    #price4{position: relative;left:35px;top:-40px;width:90px;}
+    #price5{position: relative;left:35px;top:-40px;width:90px;}
+  </style>
+  <body>
+    <div class="card-group"> 
+      <div class="card">
+       <div class="card-body">
+         <img src="Glass painting on mdf.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+         <p class="card-text" style="position: relative;right:40px;">
+           Glass painting on mdf
+         </p>
+         <p class="quantity">Quantity:</p>
+         <button id="clicking" class="btn btn-primary">0</button>
+         <button class="btn btn-primary" id="plus1"><i class="fa-solid fa-plus plus"></i></button>
+         <button class="btn btn-primary" id="minus1"><i class="fa-solid fa-minus minus"></i></button>
+         <p class="price_tag1">Price:&nbsp;$</p>
+         <p id="price1">60</p>
+       </div>
+     </div>
+     <div class="card">
+       <div class="card-body">
+         <img src="kalamkari face.jpg" class="card-img w-75" alt="..." style="height: 210px;"/>
+         <p class="card-text" style="position: relative;right:30px;">
+           Kalamkari face
+         </p>
+         <p class="quantity">Quantity:</p>
+         <button id="clicking1" class="btn btn-primary">0</button>
+         <button class="btn btn-primary" id="plus2"><i class="fa-solid fa-plus plus"></i></button>
+         <button class="btn btn-primary" id="minus2"><i class="fa-solid fa-minus minus"></i></button>
+         <p class="price_tag2">Price:&nbsp;$</p>
+         <p id="price2">60</p>
+       </div>
+     </div>
+     <div class="card">
+       <div class="card-body">
+         <img src="Kalighat painting.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+         <p class="card-text" style="position:relative;right:30px;">
+          Kalighat painting
+         </p>
+         <p class="quantity">Quantity:</p>
+         <button id="clicking2" class="btn btn-primary">0</button>
+         <button class="btn btn-primary" id="plus3"><i class="fa-solid fa-plus plus"></i></button>
+         <button class="btn btn-primary" id="minus3"><i class="fa-solid fa-minus minus"></i></button>
+         <p class="price_tag3">Price:&nbsp;$</p>
+         <p id="price3">60</p>
+       </div>
+     </div>
+     <div class="card">
+       <div class="card-body">
+         <img src="Tribal art.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+         <p class="card-text" style="position: relative;right:30px;">
+         Tribal art
+         </p>
+         <p class="quantity">Quantity:</p>
+          <button id="clicking3" class="btn btn-primary">0</button>
+          <button class="btn btn-primary" id="plus4"><i class="fa-solid fa-plus plus"></i></button>
+          <button class="btn btn-primary" id="minus4"><i class="fa-solid fa-minus minus"></i></button>
+          <p class="price_tag4">Price:&nbsp;$</p>
+          <p id="price4">60</p>
+       </div>
+     </div>
+    </div>
+    <p id="billing"></p>
+    <!--button class="btn btn-primary" onclick="showAlert()">Generate bill</button>-->
+    <!----
+    <div class="container">
+      <div class="popup-images">
+        <span>&times;</span>
+        <img src="../Glass painting on mdf.jpg" class="g" />
+        <p>Glass painting on mdf</p>
+      </div>
+      <div class="container-item">
+        <img src="kalamkari face.jpg" class="h" />
+        <p>kalamkari face</p>
+      </div>
+      <div class="container-item">
+        <img src="Kalighat painting.jpg" class="i" />
+        <p>Kalighat painting</p>
+      </div>
+      <div class="container-item3">
+        <img src="../Tribal art.jpg" class="j" id="a" />
+        <p>Tribal art</p>
+      </div>
+    </div>
+  -->
+
+   <div class="d-flex justify-content-between">
+      <div class="container-item2">
+          <button onclick="window.location.href='../home_decors2.html'" class="btn" style="background-color: lightblue;">Back</button>
+      </div>
+      <div class="container-item2">
+          <button onclick="window.location.href='../index.html'" class="btn" style="background-color: lightblue;">Home</button>
+      </div>
+      <div class="container-item2">
+          <button id="addcart" onclick=addtocart() class="btn" style="width:100%;background-color:orange;">Add to Cart</button>
+      </div>
+      <div class="container-item2">
+          <button onclick="window.location.href='../cart.html'" class="btn" style="background-color: gray;">Checkout</button>
+      </div>
+    </div>
+    <script>
+      /*let price1=document.getElementById("price1").innerHTML;
+      let price2=document.getElementById("price2").innerHTML;
+      let price3=document.getElementById("price3").innerHTML;
+      let price4=document.getElementById("price4").innerHTML;*/
+      function button_click_plus(){
+          var x=document.getElementById("clicking");
+          let quantity=parseInt(x.innerHTML);
+          quantity+=1;
+          x.innerHTML=quantity;
+          let price=60;
+          if(x.innerHTML>=0){
+          price=price*quantity;
+          }
+          else{
+            x.innerHTML=0;
+            price=60;
+          }
+          document.getElementById("price1").innerHTML=price;
+        }
+        function button_click_minus(){
+          var x=document.getElementById("clicking");
+          let quantity=parseInt(x.innerHTML);
+          quantity-=1;
+          x.innerHTML=quantity;
+          let price=document.getElementById("price1").innerHTML;
+          if(x.innerHTML>=0){
+          if(price>60){
+          price-=60;
+        }
+      }
+      else{
+        x.innerHTML=0;
+        price=60;
+      }
+        document.getElementById("price1").innerHTML=price;
+      }
+      function button_click_plus1(){
+          var x=document.getElementById("clicking1");
+          let quantity=parseInt(x.innerHTML);
+          quantity+=1;
+          x.innerHTML=quantity;
+          let price=60;
+          if(x.innerHTML>=0){
+          price=price*quantity;
+          }
+          else{
+            x.innerHTML=0;
+            price=60;
+          }
+          document.getElementById("price2").innerHTML=price;
+        }
+        function button_click_minus1(){
+          var x=document.getElementById("clicking1");
+          let quantity=parseInt(x.innerHTML);
+          quantity-=1;
+          x.innerHTML=quantity;
+          let price=document.getElementById("price2").innerHTML;
+          if(x.innerHTML>0){
+          if(price>60){
+          price-=60;
+        }
+      }
+      else{
+        x.innerHTML=0;
+        price=60;
+      }
+        document.getElementById("price2").innerHTML=price;
+      }
+      function button_click_plus2(){
+          var x=document.getElementById("clicking2");
+          let quantity=parseInt(x.innerHTML);
+          quantity+=1;
+          x.innerHTML=quantity;
+          let price=60;
+          if(x.innerHTML>=0){
+          price=price*quantity;
+          }
+          else{
+            x.innerHTML=0;
+            price=60;
+          }
+          document.getElementById("price3").innerHTML=price;
+        }
+        function button_click_minus2(){
+          var x=document.getElementById("clicking2");
+          let quantity=parseInt(x.innerHTML);
+          quantity-=1;
+          x.innerHTML=quantity;
+          let price=document.getElementById("price3").innerHTML;
+          if(x.innerHTML>0){
+          if(price>60){
+          price-=60;
+          }
+        }
+        else{
+          x.innerHTML=0;
+          price=60;
+        }
+        document.getElementById("price3").innerHTML=price;
+      }
+      function button_click_plus3(){
+          var x=document.getElementById("clicking3");
+          let quantity=parseInt(x.innerHTML);
+          quantity+=1;
+          x.innerHTML=quantity;
+          let price=60;
+          if(x.innerHTML>=0){
+          price=price*quantity;
+          }
+          else{
+            x.innerHTML=0;
+            price=60;
+          }
+          document.getElementById("price4").innerHTML=price;
+        }
+        function button_click_minus3(){
+          var x=document.getElementById("clicking3");
+          let quantity=parseInt(x.innerHTML);
+          quantity-=1;
+          x.innerHTML=quantity;
+          let price=document.getElementById("price4").innerHTML;
+          if(x.innerHTML>0){
+          if(price>60){
+          price-=60;
+          }
+        }
+        else{
+          x.innerHTML=0;
+          price=60;
+        }
+        document.getElementById("price4").innerHTML=price;
+      }
+      function button_click_plus4(){
+          var x=document.getElementById("clicking4");
+          let quantity=parseInt(x.innerHTML);
+          quantity+=1;
+          x.innerHTML=quantity;
+          let price=60;
+          if(x.innerHTML>=0){
+          price=price*quantity;
+          }
+          else{
+            x.innerHTML=0;
+            price=60;
+          }
+          document.getElementById("price5").innerHTML=price;
+        }
+        function button_click_minus4(){
+          var x=document.getElementById("clicking4");
+          let quantity=parseInt(x.innerHTML);
+          quantity-=1;
+          x.innerHTML=quantity;
+          let price=document.getElementById("price5").innerHTML;
+          if(x.innerHTML>0){
+          if(price>60){
+          price-=60;
+          }
+        }
+        else{
+          x.innerHTML=0;
+          price=60;
+        }
+        document.getElementById("price5").innerHTML=price;
+        }
+        function button_click_plus5(){
+          var x=document.getElementById("clicking5");
+          let quantity=parseInt(x.innerHTML);
+          quantity+=1;
+          x.innerHTML=quantity;
+          let price=60;
+          if(x.innerHTML>=0){
+          price=price*quantity;
+          }
+          else{
+            x.innerHTML=0;
+            price=60;
+          }
+          document.getElementById("price6").innerHTML=price;
+        }
+        function button_click_minus5(){
+          var x=document.getElementById("clicking5");
+          let quantity=parseInt(x.innerHTML);
+          quantity-=1;
+          x.innerHTML=quantity;
+          let price=document.getElementById("price6").innerHTML;
+          if(x.innerHTML>0){
+          if(price>60){
+          price-=60;
+          }
+        }
+        else{
+          x.innerHTML=0;
+          price=60;
+        }
+        document.getElementById("price6").innerHTML=price;
+        }
+      document.getElementById("plus1").addEventListener("click",button_click_plus);
+      document.getElementById("minus1").addEventListener("click",button_click_minus);
+      document.getElementById("plus2").addEventListener("click",button_click_plus1);
+      document.getElementById("minus2").addEventListener("click",button_click_minus1);
+      document.getElementById("plus3").addEventListener("click",button_click_plus2);
+      document.getElementById("minus3").addEventListener("click",button_click_minus2);
+      document.getElementById("plus4").addEventListener("click",button_click_plus3);
+      document.getElementById("minus4").addEventListener("click",button_click_minus3);
+      document.getElementById("plus5").addEventListener("click",button_click_plus4);
+      document.getElementById("minus5").addEventListener("click",button_click_minus4);
+      document.getElementById("plus6").addEventListener("click",button_click_plus5);
+      document.getElementById("minus6").addEventListener("click",button_click_minus5);
+        function showAlert() {
+      Swal.fire({
+        title: 'Are you sure you want to go for billing?',
+        icon: 'success',
+        showYesButton:true,
+        yesButtonText:'Yes',
+        buttons:  {Yes:{
+          text:'Yes',
+          value:null,
+          visible:true,
+          className:'',
+          closeModal:true,
+        },
+      No:{text:'No',
+      value:false,
+      visible:true,
+      className:'',
+      closeModal:true,
+      }}
+      });
+    }
+          /*function totalprice(){
+          total_price=parseInt(price1)+parseInt(price2)+parseInt(price3)+parseInt(price4);
+          document.getElementById("billing").innerHTML="Total cost:"+total_price;
+          }*/
+    </script>
+  </body>
+</html>
