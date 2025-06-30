@@ -8,11 +8,18 @@
   </head>
   <style>
     h1 {
-      font-family: "Cinzel", cursive;
       text-align: center;
-      padding-bottom: 4em;
+      padding-bottom: 3em;
+      font-family: "Cinzel", cursive;
     }
-    .container-1{
+    body {
+      font-family: "Cinzel", cursive;
+      background: rgb(158, 240, 50);
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
       padding-bottom: 4em;
       flex-wrap: wrap;
       cursor: pointer;
@@ -24,7 +31,7 @@
       width: 7em;
       transition: 0.2s linear;
     }
-    .container-1 .popup-images span {
+    .container .popup-images span {
       position: absolute;
       top: 0;
       right: 10px;
@@ -34,7 +41,7 @@
       cursor: pointer;
       z-index: 100;
     }
-    .container-1 .popup-images img {
+    .container .popup-images img {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -51,7 +58,7 @@
       left: 0;
       z-index: 100;
     }
-    .container-1 .popup-images {
+    .container .popup-images {
       position: fixed;
       top: 0;
       left: 0;
@@ -69,64 +76,81 @@
     img {
       width: 5em;
     }
-    body {
-      background: rgb(158, 240, 50);
+    form {
+      text-align: center;
     }
-    .container-2 {
+    input {
+      font-size: 20px;
+    }
+    .l {
+      font-family: "Cinzel", cursive;
+      padding-bottom: 2em;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .g,
+    .h,
+    .i,
+    .j,
+    .k,
+    .m {
+      height: 100px;
+      width: 100px;
+    }
+    .container-1 {
       display: flex;
       justify-content: space-between;
     }
     input {
       font-size: 20px;
-    }
-    p {
       font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
     }
-    .A,
-    .B,
-    .C,
-    .D,
-    .E,
-    .F {
-      height: 100px;
-    }
-    .card{background: rgb(158, 240, 50);border: none;}
-    .card-text{width:120px;}
-    .btn-primary{height:40px;position: relative;top: -30px;left:80px;width:90px;}
-    .quantity{position: relative; top:20px;}
-    .quantity1{position: relative;top:20px;}
+    .card{background:rgb(158, 240, 50);border: none;font-weight: bold;}
+    .btn{height:40px;position: relative;top: -30px;left:80px;width:90px;}
+    .quantity{position: relative;top:20px;}
     .plus{font-size: 15px;position: relative;color: white;cursor:pointer;top:-10px;left:-5px;}
     .minus{font-size:15px;position: relative;color:white;cursor:pointer;top:-10px;left:-5px;}
-    #plus1,#minus1,#plus2,#minus2,#plus3,#minus3,#plus4,#minus4,#plus5,#minus5{height:20px;position: relative;width:30px;}
+    #plus1,#minus1,#plus2,#minus2,#plus3,#minus3,#plus4,#minus4,#plus5,#minus5,#plus6,#minus6{height:20px;position: relative;width:30px;}
     #plus1{position: relative;left:-12px;top:-28px;}
-    #minus1{position: relative;left:10px;top:-28px;}
+    #minus1{position: relative;left:5px;top:-28px;}
     #plus2{position: relative;left:-12px;top:-28px;}
-    #minus2{position: relative;left:10px;top:-28px;}
+    #minus2{position: relative;left:5px;top:-28px;}
     #plus3{position: relative;left:-12px;top:-28px;}
-    #minus3{position: relative;left:10px;top:-28px;}
+    #minus3{position: relative;left:5px;top:-28px;}
     #plus4{position: relative;left:-12px;top:-28px;}
-    #minus4{position: relative;left:10px;top:-28px;}
+    #minus4{position: relative;left:5px;top:-28px;}
     #plus5{position: relative;left:-12px;top:-28px;}
-    #minus5{position: relative;left:10px;top:-28px;}
-    .price_tag1{position: relative;left:0px;width:90px;}
-    .price_tag2{position: relative;left:-5px;width:90px;}
-    .price_tag3{position: relative;left:-5px;width:90px;}
-    .price_tag4{position: relative;left:-5px;width:90px;}
-    .price_tag5{position: relative;left:-5px;width:90px;}
-    #price1{position: relative;left:60px;top:-40px;width:80px;}
-    #price2{position: relative;left:60px;top:-40px;width:80px;}
-    #price3{position: relative;left:60px;top:-40px;width:80px;}
-    #price4{position: relative;left:60px;top:-40px;width:80px;}
-    #price5{position: relative;top:80px;width:80px;}
+    #minus5{position: relative;left:5px;top:-28px;}
+    #plus6{position: relative;left:-12px;top:-28px;}
+    #minus6{position: relative;left:5px;top:-28px;}
+    .price_tag1{position: relative;left:-15px;width:90px;}
+    .price_tag2{position: relative;left:-15px;width:90px;}
+    .price_tag3{position: relative;left:-15px;width:90px;}
+    .price_tag4{position: relative;left:-15px;width:90px;}
+    .price_tag5{position: relative;left:-15px;width:90px;}
+    #price1{position: relative;left:55px;top:-40px;width:60px;}
+    #price2{position: relative;left:55px;top:-40px;width:60px;}
+    #price3{position: relative;left:55px;top:-40px;width:60px;}
+    #price4{position: relative;left:55px;top:-40px;width:60px;}
+    #price5{position: relative;left:55px;top:-40px;width:60px;}
+    #price6{position: relative;left:70px;top:-40px;width:60px;}
   </style>
   <body>
+    <p class="l">
+      This section displays some of the table decor made during engagement and
+      wedding ceremonies.
+    </p>
 
     <div class="card-group"> 
       <div class="card">
        <div class="card-body">
-         <img src="Wedding decor on thermocol plate.jpg" class="card w-75" style="height:210px;" alt="..." />
-         <p class="card-text" style="position: relative;left:40px;">Thermocol plate decor</p>
+         <img src="Aarti plate 2.jpg" class="card w-75" style="height:210px;" alt="..." />
+         <p class="card-text" style="position: relative;left:50px;">
+           Aarti plate
+         </p>
          <p class="quantity">Quantity:</p>
          <button id="clicking" class="btn btn-primary">0</button>
          <button class="btn btn-primary" id="plus1"><i class="fa-solid fa-plus plus"></i></button>
@@ -137,8 +161,9 @@
      </div>
      <div class="card">
        <div class="card-body">
-         <img src="Wedding decor.jpg" class="card-img w-75" alt="..." style="height: 210px;"/>
-          <p class="card-text" style="position: relative;left:70px;">Wedding decor</p>
+         <img src="Aarti plate 4.jpg" class="card-img w-75" alt="..." style="height: 210px;"/>
+         <p class="card-text" style="position: relative;left:50px;">
+          Aarti plate</p>
           <p class="quantity1">Quantity:</p>
          <button id="clicking1" class="btn btn-primary">0</button>
          <button class="btn btn-primary" id="plus2"><i class="fa-solid fa-plus plus"></i></button>
@@ -149,9 +174,9 @@
      </div>
      <div class="card">
        <div class="card-body">
-         <img src="Wedding tray decor with betel nuts.jpg" class="card-img w-75" style="height:210px;" alt="..." />
-         <p class="card-text" style="position:relative;left:60px;">
-        Betel nut decor
+         <img src="Aarti plate 1.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+         <p class="card-text" style="position:relative;left:50px;">
+          Aarti plate
          </p>
          <p class="quantity">Quantity:</p>
          <button id="clicking2" class="btn btn-primary">0</button>
@@ -163,9 +188,9 @@
      </div>
      <div class="card">
        <div class="card-body">
-         <img src="Wedding plate decor with pulses.jpg" class="card-img w-75" style="height:210px;" alt="..." />
-         <p class="card-text" style="position: relative;left:70px;">
-          Pulses decor
+         <img src="Aarti plate 3.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+         <p class="card-text" style="position: relative;left:50px;">
+        Aarti plate
          </p>
          <p class="quantity">Quantity:</p>
           <button id="clicking3" class="btn btn-primary">0</button>
@@ -175,61 +200,79 @@
           <p id="price4">60</p>
        </div>
      </div>
+     <div class="card">
+      <div class="card-body">
+        <img src="Engagement plate decor.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+        <p class="card-text" style="position: relative;left:50px;width:120px;">
+       Ring decor
+        </p>
+        <p class="quantity">Quantity:</p>
+          <button id="clicking4" class="btn btn-primary">0</button>
+          <button class="btn btn-primary" id="plus5"><i class="fa-solid fa-plus plus"></i></button>
+          <button class="btn btn-primary" id="minus5"><i class="fa-solid fa-minus minus"></i></button>
+          <p class="price_tag5">Price:&nbsp;$</p>
+          <p id="price5">60</p>
+      </div>
     </div>
-    
+    <div class="card">
+      <div class="card-body">
+        <img src="Engagement plate smiley decor on oranges.jpg" class="card-img w-75" style="height:210px;" alt="..." />
+        <p class="card-text" style="position: relative;left:50px;width:120px;">
+      Smiley decor
+        </p>
+        <p class="quantity">Quantity:</p>
+        <button id="clicking5" class="btn btn-primary">0</button>
+        <button class="btn btn-primary" id="plus6"><i class="fa-solid fa-plus plus"></i></button>
+        <button class="btn btn-primary" id="minus6"><i class="fa-solid fa-minus minus"></i></button>
+        <p class="price_tag6">Price:&nbsp;$</p>
+        <p id="price6">60</p>
+      </div>
+    </div>
+    </div>
     <!----
-    <div class="d-flex justify-content-between container-1">
+    <div class="d-flex justify-content-between">
       <div class="popup-images">
         <span>&times;</span>
-        <img src="../Wedding decor on thermocol plate.jpg" class="A" />
-        <p>Thermocol</p>
-        <p>plate decor</p>
+        <img src="../Aarti plate 2.jpg" class="g" />
+        <p>Aarti plate</p>
       </div>
-      <div class="container-1">
-        <img src="../Wedding decor.jpg" class="B" />
-        <p>Wedding</p>
-        <p>decor</p>
+      <div class="container-item">
+        <img src="Aarti plate 4.jpg" class="h" />
+        <p>Aarti plate</p>
       </div>
-      <div class="container-1">
-        <img src="Wedding tray decor with betel nuts.jpg" class="C" />
-        <p>Betel nut</p>
-        <p>decor</p>
+      <div class="container-item">
+        <img src="Aarti plate 1.jpg" class="i" />
+        <p>Aarti plate</p>
       </div>
-      <div class="container-1">
-        <img src="../Wedding plate decor with pulses.jpg" class="D" />
-        <p>Pulses</p>
-        <p>decor</p>
+      <div class="container-item3">
+        <img src="../Aarti plate 3.jpg" class="j" />
+        <p>Aarti plate</p>
+      </div>
+      <div class="container-item3">
+        <img src="../Engagement plate decor.jpg" class="k" />
+        <p>Ring decor</p>
+      </div>
+      <div class="container-item3">
+        <img src="../Engagement plate smiley decor on oranges.jpg" class="m" />
+        <p>Smiley decor</p>
       </div>
     </div>
-
   -->
     <div class="d-flex justify-content-between">
-        <div class="container-item2">
-          <button onclick="window.location.href='../Wedding_decor1.html'" class="btn" style="background-color: lightblue;">Back</button>
-        </div>
-        <div class="container-item2">
-          <button onclick="window.location.href='../index.html'" class="btn" style="background-color:yellowgreen">Home</button>
-        </div>
-        <div class="container-item2">
+      <div class="container-item2">
+          <button onclick="window.location.href='../index.html'" class="btn" style="background-color: lightblue;">Home</button>
+      </div>
+      <div class="container-item2">
           <button id="addcart" onclick=addtocart() class="btn" style="width:100%;background-color:orange;">Add to Cart</button>
-        </div>
-        <div class="container-item2">
+      </div>
+      <div class="container-item2">
           <button onclick="window.location.href='../cart.html'" class="btn" style="background-color: gray;">Checkout</button>
-        </div>
+      </div>
+      <div class="container-item2">
+          <button onclick="window.location.href='../Wedding_decor1.html'" class="btn" style="background-color:yellow">Next</button>
+      </div>
     </div>
 
-    <div class="d-flex justify-content-between pt-5">
-      <div class="c">
-        <form action="../Wedding_decor1.html" method="get">
-          <input type="submit" value="Back" />
-        </form>
-      </div>
-      <div class="c">
-        <form action="../index.html" method="get">
-          <input type="submit" value="Home" />
-        </form>
-      </div>
-    </div>
     <script>function button_click_plus(){
       var x=document.getElementById("clicking");
       let quantity=parseInt(x.innerHTML);
@@ -433,7 +476,6 @@
   document.getElementById("plus5").addEventListener("click",button_click_plus4);
   document.getElementById("minus5").addEventListener("click",button_click_minus4);
   document.getElementById("plus6").addEventListener("click",button_click_plus5);
-  document.getElementById("minus6").addEventListener("click",button_click_minus5);
-  </script>
+  document.getElementById("minus6").addEventListener("click",button_click_minus5);</script>
   </body>
 </html>

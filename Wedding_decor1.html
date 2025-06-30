@@ -95,7 +95,7 @@
       width: 7em;
     }
     .card{background: rgb(158, 240, 50);border: none;}
-    .btn{height:40px;position: relative;top: -30px;left:80px;width:90px;}
+    .btn-primary{height:40px;position: relative;top: -30px;left:80px;width:90px;}
     .quantity{position: relative;top:20px;}
     .plus{font-size: 15px;position: relative;color: white;cursor:pointer;top:-10px;left:-5px;}
     .minus{font-size:15px;position: relative;color:white;cursor:pointer;top:-10px;left:-5px;}
@@ -244,23 +244,24 @@
 
   -->
 
-    <div class="d-flex justify-content-between pt-5">
-      <div class="c">
-        <form action="../Wedding decor.html" method="get">
-          <input type="submit" value="Back" />
-        </form>
-      </div>
-      <div class="c">
-        <form action="../index.html" method="get">
-          <input type="submit" value="Home" />
-        </form>
-      </div>
-      <div class="c">
-        <form action="../Wedding_decor2.html" method="get">
-          <input type="submit" value="Next" />
-        </form>
-      </div>
+    <div class="d-flex justify-content-between">
+        <div class="container-item2">
+          <button onclick="window.location.href='../Wedding_decor.html'" class="btn" style="background-color: lightblue;">Back</button>
+        </div>
+        <div class="container-item2">
+          <button onclick="window.location.href='../index.html'" class="btn" style="background-color:yellowgreen">Home</button>
+        </div>
+        <div class="container-item2">
+          <button id="addcart" onclick=addtocart() class="btn" style="width:100%;background-color:orange;">Add to Cart</button>
+        </div>
+        <div class="container-item2">
+          <button onclick="window.location.href='../cart.html'" class="btn" style="background-color: gray;">Checkout</button>
+        </div>
+        <div class="container-item2">
+          <button onclick="window.location.href='../Wedding_decor2.html'" class="btn" style="background-color:yellow">Next</button>
+        </div>
     </div>
+
     <script>function button_click_plus(){
       var x=document.getElementById("clicking");
       let quantity=parseInt(x.innerHTML);
